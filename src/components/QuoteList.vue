@@ -84,10 +84,6 @@ export default {
 };
 </script>
 <style>
-/* .house-link {
-  font-size: 0.7rem;
-  color: rgba(0, 0, 0, 0.601);
-} */
 .person-link {
   color: rgb(0, 0, 0);
   margin: 1rem 0;

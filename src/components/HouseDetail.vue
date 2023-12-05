@@ -32,7 +32,6 @@ export default {
     };
   },
   computed: {
-    // Use a computed property to return the image URL
     houseImageUrl() {
       return this.houseDetail.slug
         ? require(`@/assets/${this.houseDetail.slug}.png`)

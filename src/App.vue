@@ -2,13 +2,10 @@
   <div id="app">
     <img alt="GoT Header" src="./assets/GameOfThroneseHeader.jpg" />
     <nav>
-      <!-- Navigation Links -->
       <router-link to="/houses">Houses</router-link>
       <router-link to="/persons">Persons</router-link>
       <router-link to="/quotes">Quotes</router-link>
-      <!-- Add more links for other sections like Persons, Quotes etc -->
     </nav>
-    <!-- Where the matched components will be displayed -->
     <router-view></router-view>
   </div>
 </template>
@@ -38,7 +35,6 @@ img {
   max-width: 90%;
   max-height: 30vh;
 }
-/* Your styles */
 #app {
   font-family: "Game of Thrones", sans-serif;
   font-size: 0.8rem;

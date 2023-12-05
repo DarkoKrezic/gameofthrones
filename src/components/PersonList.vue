@@ -55,10 +55,8 @@ export default {
   methods: {
     getCharacterImageUrl(character) {
       try {
-        // Try to require the image based on the character's slug
         return require(`@/assets/${character.slug}.jpg`);
       } catch (e) {
-        // If there is an error, (image not found), return a default image
         return require(`@/assets/default.png`);
       }
     },
@@ -72,9 +70,9 @@ export default {
 .person-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem; /* This adds space between the grid items */
-  list-style-type: none; /* Removes default list item styling */
-  padding: 0; /* Removes default padding */
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
 }
 .house {
   font-size: 0.8rem;

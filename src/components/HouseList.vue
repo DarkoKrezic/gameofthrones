@@ -53,8 +53,8 @@ export default {
 .house-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem; /* This adds space between the grid items */
-  list-style-type: none; /* Removes default list item styling */
-  padding: 0; /* Removes default padding */
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
 }
 </style>

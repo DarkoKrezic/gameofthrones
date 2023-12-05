@@ -60,15 +60,13 @@ export default {
     characterImageUrl() {
       if (this.characterDetail && this.characterDetail.slug) {
         try {
-          // Use require to dynamically load the image for the character
           return require(`@/assets/${this.characterDetail.slug}.jpg`);
         } catch (e) {
           console.error(`No image found for: ${this.characterDetail.slug}`, e);
-          // Fallback to a default image if specific character image isn't found
           return require(`@/assets/default.png`);
         }
       }
-      return ""; // If character detail is not yet loaded
+      return "";
     },
   },
   methods: {
