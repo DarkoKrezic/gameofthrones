@@ -16,7 +16,6 @@ export default createStore({
   },
   actions: {
     fetchHouses({ commit, state }) {
-      // Only fetch houses if we don't already have them
       if (state.houses.length === 0) {
         return axios
           .get("https://api.gameofthronesquotes.xyz/v1/houses")
@@ -28,7 +27,6 @@ export default createStore({
             console.error("There was an error fetching the houses:", error);
           });
       } else {
-        // Return the existing houses if we already have them
         return Promise.resolve(state.houses);
       }
     },
@@ -44,7 +42,6 @@ export default createStore({
             console.error("There was an error fetching the characters:", error);
           });
       } else {
-        // Return the existing characters if we already have them
         return Promise.resolve(state.characters);
       }
     },

@@ -8,7 +8,6 @@
         v-for="character in filteredCharacters(search)"
         :key="character.slug"
       >
-        <!-- Link to the character's detail page -->
         <div class="name">
           <router-link
             :to="{ name: 'PersonDetail', params: { slug: character.slug } }"
@@ -16,7 +15,6 @@
             {{ character.name }}
           </router-link>
         </div>
-        <!-- Conditionally render the house link if the house data is available -->
         <span v-if="character.house">
           of
           <router-link
@@ -44,7 +42,6 @@ export default {
   },
   computed: {
     ...mapGetters({
-      // Create a new getter if needed to filter characters based on the search term
       filteredCharacters: "filteredCharacters",
     }),
   },
@@ -74,7 +71,7 @@ export default {
   padding: 0.5rem;
   margin: 5px;
   border: black solid 1px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgb(251, 251, 251);
   box-shadow: black 0 0 5px;
 }

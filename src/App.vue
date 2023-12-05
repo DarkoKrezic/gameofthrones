@@ -56,8 +56,6 @@ nav {
   padding: 1rem;
   font-size: 1.2rem;
   border-radius: 10px;
-
-  /* Style for your navigation bar */
 }
 a {
   text-shadow: #564c4c5a 0 0 5px;
@@ -68,8 +66,7 @@ a:hover {
   transform: scale(1.3);
   transition-duration: 0.5s;
   text-shadow: #bbc2c269 0 0 10px;
-  /* text-decoration: underline; Adds an underline on hover */
-  color: #092436; /* Changes link color on hover; choose any color you like */
+  color: #092436;
 }
 li {
   list-style: none;

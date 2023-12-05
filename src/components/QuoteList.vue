@@ -37,12 +37,11 @@ export default {
   },
   computed: {
     allQuotes() {
-      // Create an array of objects containing the quote and character's name
       return this.$store.state.characters.flatMap((character) =>
         character.quotes.map((quote) => ({
           quote: quote,
           character: character.name,
-          slug: character.slug, // You also need the slug to create the router-link
+          slug: character.slug,
           house: character.house,
         }))
       );
@@ -51,20 +50,16 @@ export default {
   methods: {
     getRandomQuotes() {
       const shuffledQuotes = this.shuffleArray(this.allQuotes);
-      this.randomQuotes = shuffledQuotes.slice(0, 5); // Get the first 5 random quotes
+      this.randomQuotes = shuffledQuotes.slice(0, 5);
     },
     shuffleArray(array) {
-      // Fisher-Yates shuffle algorithm
       let currentIndex = array.length,
         randomIndex;
 
-      // While there remain elements to shuffle...
       while (currentIndex !== 0) {
-        // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
-        // And swap it with the current element.
         [array[currentIndex], array[randomIndex]] = [
           array[randomIndex],
           array[currentIndex],
@@ -73,20 +68,16 @@ export default {
 
       return array;
     },
-    // Fetch new quotes from the API if the store is empty
     initQuotes() {
       if (this.$store.state.characters.length === 0) {
         this.$store.dispatch("fetchCharacters").then(() => {
-          // After characters are fetched, get the random quotes
           this.getRandomQuotes();
         });
       } else {
-        // If characters are already available, get the random quotes directly
         this.getRandomQuotes();
       }
     },
   },
-  // When the component is created, initialize with 5 random quotes
   created() {
     this.initQuotes();
   },

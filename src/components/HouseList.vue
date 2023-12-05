@@ -3,7 +3,6 @@
     <h1>Houses</h1>
     <input v-model="search" placeholder="Search houses..." />
     <ul>
-      <!-- Pass search to filteredHouses -->
       <li
         class="house-list"
         v-for="house in filteredHouses(search)"
@@ -38,10 +37,11 @@ export default {
 </script>
 <style>
 .house-list {
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 5px;
   border: black solid 1px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgb(251, 251, 251);
+  box-shadow: black 0 0 5px;
 }
 </style>

@@ -19,7 +19,7 @@ const routes = [
     path: "/house/:slug",
     name: "HouseDetail",
     component: HouseDetail,
-    props: true, // This allows us to pass the slug as a prop to the component
+    props: true,
   },
   {
     path: "/persons",
@@ -30,18 +30,17 @@ const routes = [
     path: "/persons/:slug",
     name: "PersonDetail",
     component: PersonDetail,
-    props: true, // This allows us to pass the slug as a prop to the component
+    props: true,
   },
   {
     path: "/quotes",
     name: "QuoteList",
     component: QuoteList,
   },
-  // ... other routes
 ];
 
 const router = createRouter({
-  history: createWebHistory(), // Use history mode for clean URLs
+  history: createWebHistory(),
   routes,
 });
 

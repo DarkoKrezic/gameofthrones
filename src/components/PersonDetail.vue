@@ -65,8 +65,6 @@ export default {
       }
     },
     refreshQuotes() {
-      // You may want to adjust this logic based on your requirements
-      // This sample takes a random character to simulate refreshing quotes
       const otherCharacters = this.$store.state.characters.filter(
         (character) => character.slug !== this.characterDetail.slug
       );
@@ -112,7 +110,6 @@ export default {
 </script>
 
 <style>
-/* Add your CSS styles here */
 .character-link {
   font-family: "Game of Thrones", sans-serif;
   color: inherit;

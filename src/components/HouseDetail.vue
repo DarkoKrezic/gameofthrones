@@ -28,14 +28,11 @@
 export default {
   data() {
     return {
-      // Initialize with an empty object that will be filled once the data is fetched
       houseDetail: {},
     };
   },
   beforeRouteEnter(to, from, next) {
-    // Call next with a callback which receives the component instance after navigation confirmation
     next((vm) => {
-      // Here 'vm' is the component instance that hasn't been created yet when guard was called
       vm.fetchHouseDetailIfNeeded();
     });
   },
@@ -45,11 +42,9 @@ export default {
         (h) => h.slug === this.$route.params.slug
       );
 
-      // If the house is found in the state, set it to our local houseDetail object
       if (house) {
         this.houseDetail = house;
       } else {
-        // If not found, dispatch an action to fetch the house and set it
         this.$store.dispatch("fetchHouses").then(() => {
           this.houseDetail = this.$store.state.houses.find(
             (h) => h.slug === this.$route.params.slug
@@ -62,10 +57,11 @@ export default {
 </script>
 <style>
 .member-list {
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 5px;
   border: black solid 1px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgb(251, 251, 251);
+  box-shadow: black 0 0 5px;
 }
 </style>
