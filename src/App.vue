@@ -1,26 +1,91 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <img alt="GoT Logo" src="./assets/Game-of-Thrones-Logo.png" />
+    <nav>
+      <!-- Navigation Links -->
+      <router-link to="/houses">Houses</router-link>
+      <router-link to="/persons">Persons</router-link>
+      <router-link to="/quotes">Quotes</router-link>
+      <!-- Add more links for other sections like Persons, Quotes etc -->
+    </nav>
+    <!-- Where the matched components will be displayed -->
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
+@font-face {
+  font-family: "Game of Thrones";
+  src: url("./assets/Game of Thrones.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Grenze Gotisch;
+  src: url("./assets/GrenzeGotisch-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 30vh;
+}
+/* Your styles */
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Game of Thrones", sans-serif;
+  font-size: 0.8rem;
+}
+body {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: beige;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #6961617a;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+
+  /* Style for your navigation bar */
+}
+a {
+  text-shadow: #564c4c5a 0 0 5px;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  transform: scale(1.3);
+  transition-duration: 0.5s;
+  text-shadow: #bbc2c269 0 0 10px;
+  /* text-decoration: underline; Adds an underline on hover */
+  color: #092436; /* Changes link color on hover; choose any color you like */
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+button {
+  font-family: Game of Thrones, sans-serif;
+  font-size: 0.7rem;
+  background-color: bisque;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+button:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
 }
 </style>
