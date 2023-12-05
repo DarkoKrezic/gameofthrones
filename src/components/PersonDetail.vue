@@ -1,6 +1,12 @@
 <template>
   <div v-if="characterDetail">
     <h1 class="character-name">{{ characterDetail.name }}</h1>
+    <img
+      :src="characterImageUrl"
+      class="profile-image"
+      :alt="`${characterDetail.name}`"
+    />
+
     <h2 class="house-name" v-if="characterDetail.house">
       <router-link
         :to="{
@@ -12,7 +18,6 @@
       </router-link>
     </h2>
     <ul>
-      <!-- Iterate through currentQuotes and provide links to the PersonDetail route -->
       <li
         class="quote-card"
         v-for="(quoteObj, index) in currentQuotes"
@@ -51,6 +56,19 @@ export default {
       return this.$store.state.characters.find(
         (character) => character.slug === this.$route.params.slug
       );
+    },
+    characterImageUrl() {
+      if (this.characterDetail && this.characterDetail.slug) {
+        try {
+          // Use require to dynamically load the image for the character
+          return require(`@/assets/${this.characterDetail.slug}.jpg`);
+        } catch (e) {
+          console.error(`No image found for: ${this.characterDetail.slug}`, e);
+          // Fallback to a default image if specific character image isn't found
+          return require(`@/assets/default.png`);
+        }
+      }
+      return ""; // If character detail is not yet loaded
     },
   },
   methods: {
@@ -126,13 +144,6 @@ export default {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-.character-name {
-  text-shadow: rgba(0, 0, 0, 0.326) 0px 0px 5px;
-}
-.character-name:hover {
-  transform: scale(1.1);
-  transition-duration: 0.5s;
-}
 .house-name {
   text-shadow: rgba(0, 0, 0, 0.326) 0px 0px 5px;
 }
@@ -142,5 +153,8 @@ export default {
 }
 .house-link {
   transform: scale(1.1);
+}
+.profile-image {
+  border-radius: 20%;
 }
 </style>

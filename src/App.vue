@@ -58,7 +58,7 @@ nav {
   border-radius: 10px;
 }
 a {
-  text-shadow: #564c4c5a 0 0 5px;
+  text-shadow: #ffffffd9 0 0 10px;
   text-decoration: none;
   color: inherit;
 }
@@ -85,7 +85,8 @@ button:hover {
   transform: scale(1.1);
   transition-duration: 0.5s;
 }
-h1 {
+h1,
+h2 {
   color: #ffffff;
   font-size: 2rem;
 }
