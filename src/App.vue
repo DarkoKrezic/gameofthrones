@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img alt="GoT Header" src="./assets/GameOfThroneseHeader.jpg" />
+    <audio-player></audio-player>
     <nav>
       <router-link to="/houses">Houses</router-link>
       <router-link to="/persons">Persons</router-link>
@@ -11,8 +12,10 @@
 </template>
 
 <script>
+import AudioPlayer from "./components/AudioPlayer.vue";
 export default {
   name: "App",
+  components: { AudioPlayer },
 };
 </script>
 
@@ -85,5 +88,17 @@ h1,
 h2 {
   color: #ffffff;
   font-size: 2rem;
+  animation: pulsate-shadow 3s infinite;
+}
+@keyframes pulsate-shadow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000;
+    color: #fff;
+  }
+  50% {
+    text-shadow: 0 0 20px #f6f86fb9, 0 0 30px #ff0800bc, 0 0 40px #ccff007c;
+    color: #f5f29a;
+  }
 }
 </style>

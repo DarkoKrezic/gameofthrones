@@ -4,6 +4,11 @@
       <li class="quote-card" v-for="(item, index) in randomQuotes" :key="index">
         <div class="quote-text">"{{ item.quote }}" -</div>
         <div class="character-name">
+          <img
+            :src="getCharacterImageUrl(item.slug)"
+            class="character-image-quote"
+            :alt="item.character"
+          />
           <router-link
             class="person-link"
             :to="{ name: 'PersonDetail', params: { slug: item.slug } }"
@@ -48,6 +53,14 @@ export default {
     },
   },
   methods: {
+    getCharacterImageUrl(slug) {
+      try {
+        return require(`@/assets/${slug}.jpg`);
+      } catch (e) {
+        return require("@/assets/default.png");
+      }
+    },
+
     getRandomQuotes() {
       const shuffledQuotes = this.shuffleArray(this.allQuotes);
       this.randomQuotes = shuffledQuotes.slice(0, 5);
@@ -107,5 +120,18 @@ export default {
 }
 .get-new-quotes-button {
   margin-top: 1rem;
+}
+.character-image-quote {
+  width: auto; /* or any size that fits your design */
+  height: 70px; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: if you want rounded corners */
+  margin-right: 10px; /* Space between image and text */
+  border-radius: 50%;
+}
+.character-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
 }
 </style>
