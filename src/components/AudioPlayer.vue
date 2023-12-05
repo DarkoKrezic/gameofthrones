@@ -1,7 +1,6 @@
 <template>
   <div class="audio-player">
     <button @click="togglePlay" class="audio-button">
-      <!-- Switch icon based on whether the music is playing -->
       <img
         class="audio-icon"
         v-if="isPlaying"
@@ -10,7 +9,6 @@
       />
       <img class="audio-icon" v-else src="@/assets/play-icon.png" alt="Play" />
     </button>
-    <!-- Hidden audio element -->
     <audio ref="audio" :src="audioSrc" @ended="isPlaying = false"></audio>
   </div>
 </template>
@@ -41,11 +39,11 @@ export default {
 
 <style scoped>
 .audio-player {
-  position: fixed; /* Or other positioning as needed */
-  right: 10px; /* Positioning offsets */
+  position: fixed;
+  right: 10px;
   top: 10px;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 1000; /* Ensures it's above other content */
+  z-index: 1000;
 }
 .audio-button {
   background-color: rgba(0, 0, 0, 0);

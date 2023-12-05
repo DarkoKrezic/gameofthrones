@@ -122,10 +122,10 @@ export default {
   margin-top: 1rem;
 }
 .character-image-quote {
-  width: auto; /* or any size that fits your design */
-  height: 70px; /* Maintain aspect ratio */
-  border-radius: 5px; /* Optional: if you want rounded corners */
-  margin-right: 10px; /* Space between image and text */
+  width: auto;
+  height: 70px;
+  border-radius: 5px;
+  margin-right: 10px;
   border-radius: 50%;
 }
 .character-name {
