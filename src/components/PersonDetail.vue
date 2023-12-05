@@ -1,6 +1,6 @@
 <template>
   <div v-if="characterDetail">
-    <h1 class="character-name">{{ characterDetail.name }}</h1>
+    <h1 class="character-name-title">{{ characterDetail.name }}</h1>
     <img
       :src="characterImageUrl"
       class="profile-image"

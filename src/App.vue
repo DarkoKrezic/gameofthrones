@@ -89,6 +89,7 @@ h2 {
   color: #ffffff;
   font-size: 2rem;
   animation: pulsate-shadow 3s infinite;
+  text-align: center;
 }
 @keyframes pulsate-shadow {
   0%,

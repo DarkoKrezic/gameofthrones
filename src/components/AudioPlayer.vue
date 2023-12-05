@@ -52,10 +52,9 @@ export default {
   border: none;
   cursor: pointer;
   outline: none;
-  width: 10vw;
 }
 .audio-icon {
-  height: 60px;
+  height: 40px;
 
   object-fit: contain;
 }
