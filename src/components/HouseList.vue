@@ -16,7 +16,7 @@
             :alt="`House ${house.name}`"
             class="house-image"
           />
-          <div class="house-name">{{ house.name }}</div>
+          <div>{{ house.name }}</div>
         </router-link>
       </li>
     </ul>
