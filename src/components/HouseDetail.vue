@@ -1,15 +1,18 @@
 <template>
   <div v-if="houseDetail">
-    <!-- Display the house name -->
     <h1>{{ houseDetail.name }}</h1>
-    <!-- List of members with links to their details -->
+    <img
+      v-if="houseDetail.slug"
+      :src="houseImageUrl"
+      :alt="houseDetail.name"
+      class="house-image"
+    />
     <ul>
       <li
         class="member-list"
         v-for="member in houseDetail.members"
         :key="member.slug"
       >
-        <!-- Link to the person's detail page -->
         <router-link
           :to="{ name: 'PersonDetail', params: { slug: member.slug } }"
         >
@@ -18,10 +21,7 @@
       </li>
     </ul>
   </div>
-  <div v-else>
-    <!-- Loading indicator while house details are being fetched -->
-    Loading house details...
-  </div>
+  <div v-else>Loading house details...</div>
 </template>
 
 <script>
@@ -30,6 +30,14 @@ export default {
     return {
       houseDetail: {},
     };
+  },
+  computed: {
+    // Use a computed property to return the image URL
+    houseImageUrl() {
+      return this.houseDetail.slug
+        ? require(`@/assets/${this.houseDetail.slug}.png`)
+        : "";
+    },
   },
   beforeRouteEnter(to, from, next) {
     next((vm) => {
@@ -61,7 +69,7 @@ export default {
   margin: 5px;
   border: black solid 1px;
   border-radius: 10px;
-  background-color: rgb(251, 251, 251);
+  background-color: rgba(255, 255, 255, 0.75);
   box-shadow: black 0 0 5px;
 }
 </style>

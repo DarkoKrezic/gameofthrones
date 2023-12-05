@@ -11,13 +11,13 @@
             {{ item.character }}
           </router-link>
         </div>
-        <span class="house-name" v-if="item.house">
+        <span v-if="item.house">
           of
           <router-link
             class="house-link"
             :to="{ name: 'HouseDetail', params: { slug: item.house.slug } }"
           >
-            {{ item.house.name }}
+            <div class="house-name">{{ item.house.name }}</div>
           </router-link>
         </span>
       </li>
@@ -84,10 +84,10 @@ export default {
 };
 </script>
 <style>
-.house-link {
+/* .house-link {
   font-size: 0.7rem;
   color: rgba(0, 0, 0, 0.601);
-}
+} */
 .person-link {
   color: rgb(0, 0, 0);
   margin: 1rem 0;
@@ -107,7 +107,6 @@ export default {
   margin: 0.5rem 0.5rem;
   border: black solid 1px;
   border-radius: 10px;
-  box-shadow: black 0 0 5px;
   background-color: rgba(255, 255, 255, 0.75);
 }
 .get-new-quotes-button {

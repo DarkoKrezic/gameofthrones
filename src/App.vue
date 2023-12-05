@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="GoT Logo" src="./assets/Game-of-Thrones-Logo.png" />
+    <img alt="GoT Header" src="./assets/GameOfThroneseHeader.jpg" />
     <nav>
       <!-- Navigation Links -->
       <router-link to="/houses">Houses</router-link>
@@ -45,7 +45,7 @@ img {
 }
 body {
   text-align: center;
-  background-color: beige;
+  background-color: rgb(0, 0, 0);
 }
 nav {
   display: flex;
@@ -63,10 +63,10 @@ a {
   color: inherit;
 }
 a:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   transition-duration: 0.5s;
-  text-shadow: #bbc2c269 0 0 10px;
-  color: #092436;
+  text-shadow: #f4f7a1f6 0 0 20px;
+  color: #fff017;
 }
 li {
   list-style: none;
@@ -84,5 +84,9 @@ button {
 button:hover {
   transform: scale(1.1);
   transition-duration: 0.5s;
+}
+h1 {
+  color: #ffffff;
+  font-size: 2rem;
 }
 </style>

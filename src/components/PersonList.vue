@@ -68,11 +68,12 @@ export default {
   transition: 0.5s;
 }
 .person-list-card {
-  padding: 0.5rem;
-  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 0.5rem 0.5rem;
   border: black solid 1px;
   border-radius: 10px;
-  background-color: rgb(251, 251, 251);
-  box-shadow: black 0 0 5px;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 </style>
